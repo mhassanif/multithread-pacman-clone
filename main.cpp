@@ -121,10 +121,11 @@ int main()
     ghostSprites[i].setScale(1.0f, 1.0f);
   }
 
-  Texture boosttex;
-  boosttex.loadFromFile("textures/boost.png");
-  speedPowerUp1.setTexture(boosttex);
-  speedPowerUp2.setTexture(boosttex);
+  // Texture boosttex;
+  // boosttex.loadFromFile("textures/boost.png");
+  // speedPowerUp1.setTexture(boosttex);
+  // speedPowerUp2.setTexture(boosttex);
+
   //////////////////////////////////
   // THREADS
   //////////////////////////////////
@@ -141,7 +142,7 @@ int main()
   }
 
   //SPEED BOOST
-  pthread_t speedBoost1, speedBoost2;
+  // pthread_t speedBoost1, speedBoost2;
   // pthread_create(&speedBoost1, nullptr, speedBoost, &speedPowerUp1);
   // pthread_create(&speedBoost2, nullptr, speedBoost, &speedPowerUp2);
 
@@ -156,14 +157,16 @@ int main()
       if (event.type == Event::Closed)
         window.close();
     }
+
     time_POWER_UP++;
-    if (POWER_UP)
-      cout << "POWER UP IS ACTIVE\n";
+
+    // if (POWER_UP)
+    //   cout << "POWER UP IS ACTIVE\n";
 
     if (POWER_UP && (time_POWER_UP % 10000) == 0)
     {
       POWER_UP = false;
-      cout << "POWER UP RAN OUT\n";
+      // cout << "POWER UP RAN OUT\n";
       time_POWER_UP = 0;
     }
 
@@ -220,8 +223,8 @@ int main()
 
     window.draw(scoreText); // Add this line to draw the score text
 
-    window.draw(speedPowerUp1);
-    window.draw(speedPowerUp2);
+    // window.draw(speedPowerUp1);
+    // window.draw(speedPowerUp2);
 
     // Display the window
     window.display();
